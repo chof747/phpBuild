@@ -149,7 +149,12 @@ RUN set -xe; \
     
 # prepare pip and dbversions
 RUN set -xe \
-    && pip install --upgrade pip \
-    && pip install dbversions
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+       python3-pip
+
+RUN set -xe \
+    && pip3 install --upgrade pip \
+    && pip3 install dbversions
 
 WORKDIR $PHPPATH
