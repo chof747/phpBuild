@@ -125,11 +125,11 @@ RUN set -xe \
     && LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-               php5.6 php5.6-mysql php5.6-cli php5.6-xml php5.6-curl php5.6-dom php5.6-gd php5.6-mbstring php5.6-zip
+               php7.2 php7.2-mysql php7.2-cli php7.2-xml php7.2-curl php7.2-dom php7.2-gd php7.2-mbstring php7.2-zip
     
 # Configure PHP         
 RUN set -xe \
-    && echo 'date.timezone="Europe/Vienna"' >> /etc/php/5.6/cli/php.ini  
+    && echo 'date.timezone="Europe/Vienna"' >> /etc/php/7.2/cli/php.ini  
     
 RUN set -xe \
     && cp /usr/share/zoneinfo/Europe/Vienna /etc/localtime 
